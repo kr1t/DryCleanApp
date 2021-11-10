@@ -1,0 +1,43 @@
+<template>
+  <div>
+    <h3>เลือกบริการ</h3>
+    <selectServiceByGender :services="services" :categoryName="activeName" />
+
+    <div class="row p-2">
+      <div class="col-6">
+        <button @click="$emit('changePage', 'selectCategory')" class="w-100">
+          กลับ
+        </button>
+      </div>
+      <div class="col-6">
+        <button
+          @click="$emit('changePage', 'cartList')"
+          class="w-100"
+          :disabled="carts.amount < 1"
+        >
+          ถัดไป
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { mapGetters } from "vuex";
+import selectServiceByGender from "./selectService/selectServiceByGender.vue";
+export default {
+  components: {
+    selectServiceByGender,
+  },
+  computed: {
+    ...mapGetters("service_category", {
+      services: "services",
+      activeName: "activeName",
+      carts: "carts",
+    }),
+  },
+};
+</script>
+
+<style>
+</style>
