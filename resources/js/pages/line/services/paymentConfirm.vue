@@ -107,9 +107,12 @@ export default {
           cancelButtonColor: "#d33",
           confirmButtonText: "ยืนยัน",
         })
-        .then((result) => {
+        .then(async (result) => {
           if (result.isConfirmed) {
-            this.makeOrder();
+            const { order_code } = await this.makeOrder();
+            if (order_code) {
+              this.$emit("changePage", "success");
+            }
           }
         });
     },
