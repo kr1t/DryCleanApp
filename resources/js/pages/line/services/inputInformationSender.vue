@@ -64,7 +64,7 @@
 
     <div class="row p-2">
       <div class="col-6">
-        <button @click="$emit('changePage', 'cartList')" class="w-100">
+        <button @click="$emit('changePage', 'inputInformation')" class="w-100">
           กลับ
         </button>
       </div>

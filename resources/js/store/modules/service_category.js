@@ -107,6 +107,7 @@ export const mutations = {
     state.idActive = 1
     state.information = {"first_name":"qwe","last_name":"qwe","tel":"091222122341","address":"wdqqw","date":"2021-11-05","time":"03:00"}
     state.informationSender = {"first_name":"qwe","last_name":"qwe","tel":"091222122341","address":"wdqqw","date":"2021-11-05","time":"03:00"}
+    state.order_code = 'DABORNZ007'
   }
 };
 
