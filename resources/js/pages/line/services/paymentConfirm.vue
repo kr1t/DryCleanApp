@@ -19,7 +19,6 @@
       {{ information.first_name }} {{ information.last_name }} <br />
       {{ information.tel }} <br />
       {{ information.address }}
-      Line Man
     </div>
     <hr />
     <div class="informationSender">
@@ -28,7 +27,6 @@
       <br />
       {{ informationSender.tel }} <br />
       {{ informationSender.address }}
-      Line Man
     </div>
     <hr />
     <div class="imageOrder">
@@ -63,9 +61,7 @@
         </button>
       </div>
       <div class="col-6">
-        <button @click="$emit('changePage', 'x')" class="w-100">
-          ยืนยันออร์เดอร์
-        </button>
+        <button @click="confirmOrder()" class="w-100">ยืนยันออร์เดอร์</button>
       </div>
     </div>
   </div>
@@ -96,6 +92,25 @@ export default {
       information: "information",
       informationSender: "informationSender",
     }),
+  },
+  methods: {
+    confirmOrder() {
+      this.$swal
+        .fire({
+          title: "ต้องการยืนยันออร์เดอร์ ?",
+          text: "เมื่อทำการยืนยันแล้ว สามารถยกเลิกรายการ หากยังไม่ได้รับการยืนยันรายการจากระบบ",
+          showCancelButton: true,
+          cancelButtonText: "ยกเลิก",
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "ยืนยัน",
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            this.$emit("changePage", "success");
+          }
+        });
+    },
   },
 };
 </script>
