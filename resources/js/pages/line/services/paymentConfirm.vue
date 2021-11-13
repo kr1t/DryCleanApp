@@ -69,7 +69,7 @@
 
 
 <script>
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import serviceInputComponent from "./selectService/component/serviceInput.vue";
 
 export default {
@@ -94,6 +94,9 @@ export default {
     }),
   },
   methods: {
+    ...mapActions("service_category", {
+      makeOrder: "makeOrder",
+    }),
     confirmOrder() {
       this.$swal
         .fire({
@@ -107,7 +110,7 @@ export default {
         })
         .then((result) => {
           if (result.isConfirmed) {
-            this.$emit("changePage", "success");
+            this.makeOrder();
           }
         });
     },

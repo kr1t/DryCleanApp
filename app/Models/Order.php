@@ -13,12 +13,26 @@ class Order extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+
+    protected $fillable = ['price_sum','status','order_code','pos_code','user_id'];
     public function services()
     {
-        return $this->hasMany(Service::class);
+        return $this->hasMany(OrderService::class);
     }
-    public function services()
+
+    public function informations()
     {
-        return $this->hasMany(Service::class);
+        return $this->hasMany(OrderInformation::class);
     }
+
+     public function informationRequest()
+    {
+        return $this->hasOne(OrderInformation::class)->where('type',1);
+    }
+
+        public function informationSend()
+    {
+        return $this->hasOne(OrderInformation::class)->where('type',2);
+    }
+  
 }

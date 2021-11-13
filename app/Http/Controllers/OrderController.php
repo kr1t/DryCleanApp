@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class OrderController extends Controller
 {
@@ -35,7 +37,43 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $carts = $request->carts;
+        $information = $request->information;
+        $informationSender = $request->informationSender;
+
+        $countOrder = Order::count();
+        $dateFmt = Carbon::now()->format('ymd');
+
+        $countZeroPad = str_pad(($countOrder+1), 3, "0", STR_PAD_LEFT);
+        $orderId = "LN{$dateFmt}{$countZeroPad}";
+
+         $order = Order::create([
+             "price_sum"=>  $carts['priceAll'], 
+             "order_code" => $orderId,
+             'user_id' => 1,
+         ]);
+
+         foreach($carts['services'] as $service){
+             $order->services()->create([
+                'service_id' => $service['id'],
+                'price' => $service['price'],
+                'model' => $service['model'],
+             ]);
+         }
+
+        $information['type'] = 1;
+         $order->informations()->create($information);
+        $informationSender['type'] = 2;
+         $order->informations()->create($informationSender);
+
+         
+
+        return [
+            'message'=>'success',
+            'data'=>[
+                'order_code' =>  $order->order_code
+            ]
+        ];
     }
 
     /**

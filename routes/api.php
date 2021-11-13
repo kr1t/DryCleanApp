@@ -11,6 +11,7 @@ use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceCategoryController;
+use App\Http\Controllers\OrderController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -58,3 +59,4 @@ Route::group(['middleware' => 'guest:api'], function () {
 
 crud('services', ServiceController::class);
 crud('service_categories', ServiceCategoryController::class);
+crud('orders', OrderController::class);
