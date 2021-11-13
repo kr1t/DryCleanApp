@@ -120,11 +120,13 @@ export default {
       if (name == "1") {
         for (let f in this.form) {
           this.form[f] = this.information[f];
+          this.form.date = "";
+          this.form.time = "";
         }
       }
       if (name == "2") {
         for (let f in this.form) {
-          this.form[f] = "";
+          this.foxrm[f] = "";
         }
       }
     },
