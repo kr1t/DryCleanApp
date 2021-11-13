@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h3>เลือกบริการ</h3>
+  <div class="container">
+    <h1 class="h1-laundry my-4">เลือกบริการ</h1>
     <selectServiceByGender :services="services" :categoryName="activeName" />
 
     <div class="row p-2">
@@ -12,7 +12,7 @@
       <div class="col-6">
         <button
           @click="$emit('changePage', 'cartList')"
-          class="w-100"
+          class="w-100 btn-outline-primary"
           :disabled="carts.amount < 1"
         >
           ถัดไป

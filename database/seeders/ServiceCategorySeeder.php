@@ -14,6 +14,7 @@ class ServiceCategorySeeder extends Seeder
      */
     public function run()
     {
+        //แก้่ ไอคอน
         ServiceCategory::insert([
             [
                 'name' => 'ซักแห้ง',

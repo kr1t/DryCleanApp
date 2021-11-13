@@ -15,7 +15,7 @@
     <div class="serviceLists">
       <div class="serviceListsAll">
         <div class="selectMale" v-if="selectName != 'f'">
-          {{ categoryName }} (ชาย)
+          <div class="title-product"> {{ categoryName }} (ชาย) </div>
           <serviceInputComponent
             v-for="(service, index) in serviceFilterByGender('m')"
             :key="index"
@@ -24,7 +24,7 @@
           <hr />
         </div>
         <div class="selectMale" v-if="selectName != 'm'">
-          {{ categoryName }} (หญิง)
+          <div class="title-product"> {{ categoryName }} (หญิง) </div>
           <serviceInputComponent
             v-for="(service, index) in serviceFilterByGender('f')"
             :key="index"
@@ -73,7 +73,20 @@ export default {
 </script>
 
 <style>
+.selectGender{
+  text-align: center;
+  margin-bottom: 20px;
+}
 .selectGender button.active {
-  background: blue;
+  background-color: #233aa6 !important;
+  border-radius: 30px !important;
+  padding: 10px 20px !important;
+  color: #fff !important;
+}
+.selectGender button {
+  color: #233aa6 !important;
+  border: 1px solid #233aa6 !important;
+  border-radius: 30px !important;
+  padding: 10px 20px !important;
 }
 </style>

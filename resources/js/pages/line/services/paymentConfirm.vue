@@ -8,7 +8,6 @@
         v-for="(service, index) in carts.services"
         :key="index"
         :service="service"
-        :showDelete="carts.services.length > 1"
         hideInput
       />
     </div>
@@ -63,7 +62,7 @@
         </button>
       </div>
       <div class="col-6">
-        <button @click="$emit('changePage', 'x')" class="w-100">
+        <button @click="$emit('changePage', 'success')" class="w-100">
           ยืนยันออร์เดอร์
         </button>
       </div>

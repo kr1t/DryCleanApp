@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="text-center">
-      <h1 class="h1-laundry my-3">เลือกบริการ</h1>
+      <h1 class="h1-laundry my-4">เลือกบริการ</h1>
       <div class="row">
         <div class="col-6" v-for="category in categories" :key="category.id">
           <div class="card bg-primary">

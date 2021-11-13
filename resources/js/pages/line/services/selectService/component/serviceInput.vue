@@ -1,25 +1,35 @@
 <template>
   <div>
-    <div class="serviceLeft">{{ service.name }}</div>
-    <div class="serviceRight">
-      <span class="price">{{ service.price }} บาท</span>
-      <span class="inputMinMax">
-        <button
-          @click="DECREASE_SERVICE_MODEL(service)"
-          :disabled="service.model < 1"
-          v-if="!hideInput"
-        >
-          -
-        </button>
-        <span class="amountModel">{{ service.model }}</span>
-        <button @click="INCREASE_SERVICE_MODEL(service)" v-if="!hideInput">
-          +
-        </button>
+    <div class="row">
+      <div class="col-5 mb-2"><div class="serviceLeft product-name">{{ service.name }}</div></div>
+      <div class="col-3"><span class="price product-price">{{ service.price }} บาท</span></div>
+      <div class="col-4">
+        <div class="row">
+            <div class="col-3 text-left">
+              <button class="btn-product "
+                @click="DECREASE_SERVICE_MODEL(service)"
+                v-if="!hideInput">
+                -
+              </button>
+            </div>
 
-        <button @click="DEL_SERVICE_MODEL(service)" v-if="showDelete">
-          delete
-        </button>
-      </span>
+            <div class="col-3 text-left">
+              <span class="amountModel product-amount">{{ service.model }}</span>
+            </div>
+
+            <div class="col-3 text-left">
+              <button class="btn-product"
+                @click="INCREASE_SERVICE_MODEL(service)"
+                v-if="!hideInput">
+                +
+              </button>
+            </div>
+
+            <button @click="DEL_SERVICE_MODEL(service)" v-if="showDelete">
+              delete
+            </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>

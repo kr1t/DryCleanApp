@@ -21,6 +21,7 @@
       @changePage="setCurrentPage"
       v-if="currentPage == 'paymentConfirm'"
     />
+    <serviceSuccess   v-if="currentPage == 'success'"/>
 
     <cartFloat
       @changePage="setCurrentPage"
@@ -38,7 +39,7 @@ import inputInformationRequest from "./inputInformationRequest.vue";
 import inputInformationSender from "./inputInformationSender.vue";
 
 import paymentConfirm from "./paymentConfirm.vue";
-
+import serviceSuccess from './success.vue'
 import cartFloat from "./selectService/component/cartFloat.vue";
 
 export default {
@@ -53,6 +54,7 @@ export default {
     inputInformationSender,
     paymentConfirm,
     cartFloat,
+    serviceSuccess
   },
   computed: {
     ...mapGetters("service_category", {

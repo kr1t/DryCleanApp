@@ -8,13 +8,18 @@ export const state = {
   ...tState,
   idActive: null,
   information: {
-    first_name: "Krittanai",
-    last_name: "Muangnoi",
-    tel: "0964759651",
-    address: "dqwwq",
-    date: "2021-11-11",
-    time: "03:26",
-    express_id: 1
+    first_name: "",
+    last_name: "",
+    tel: "",
+    address: "",
+    date: "",
+    time: ""
+    // first_name: "Krittanai",
+    // last_name: "Muangnoi",
+    // tel: "0964759651",
+    // address: "dqwwq",
+    // date: "2021-11-11",
+    // time: "03:26"
   },
   informationSender: {}
 };

@@ -40,21 +40,6 @@
         <input type="time" name="time" required v-model="form.time" />
       </div>
 
-      <div class="inputExpress">
-        <div class="form-check" v-for="(e, i) in express" :key="i">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="expressRadio"
-            :id="e.id"
-            :value="e.id"
-            v-model="form.express_id"
-          />
-          <label class="form-check-label" for="expressRadio">
-            {{ e.name }}
-          </label>
-        </div>
-      </div>
     </form>
 
     <div class="row p-2">
@@ -84,7 +69,6 @@ export default {
         address: "",
         date: "",
         time: "",
-        express_id: 1,
       },
     };
   },
