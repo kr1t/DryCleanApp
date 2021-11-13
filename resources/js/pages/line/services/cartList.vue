@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="container">
+    <h1 class="h1-laundry my-4">ชำระเงิน</h1>
     <h2>{{ carts.amount }} ชิ้น</h2>
     <hr />
     <div class="cartAll">
