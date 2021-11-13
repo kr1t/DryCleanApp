@@ -3,6 +3,7 @@ const colName = "service_categories";
 const { tState, tGetters, tMutations, tActions } = templateFire(colName);
 
 import { findIndex, sumBy } from "lodash";
+import axios from "axios";
 // state
 export const state = {
   ...tState,
@@ -101,5 +102,15 @@ export const actions = {
   },
   addInformationSender({ commit }, form) {
     commit("ADD_INFORMATION_SENDER", form);
+  },
+  async makeOrder({ state, getters }) {
+    const { information, informationSender } = state;
+    const { carts } = getters;
+    const { data } = await axios.post("/api/orders", {
+      information,
+      informationSender,
+      carts
+    });
+    console.log(data);
   }
 };
