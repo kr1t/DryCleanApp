@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-5 mb-2"><div class="serviceLeft product-name">{{ service.name }}</div></div>
+      <div class="col-5 mb-3"><div class="serviceLeft product-name">{{ service.name }}</div></div>
       <div class="col-3"><span class="price product-price">{{ service.price }} บาท</span></div>
       <div class="col-4">
         <div class="row">

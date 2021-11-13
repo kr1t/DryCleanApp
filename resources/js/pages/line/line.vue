@@ -107,15 +107,15 @@ button {
 }
 .product-name{
   text-align: left;
-  font-weight: 600;
+  font-weight: 500;
 }
 .product-price{
   text-align: left;
-  font-weight: 600;
+  font-weight: 500;
   color: #233aa6;
 }
 .product-amount{
-  font-weight: 600;
+  font-weight: 500;
   margin: 0px 7px;
 }
 .btn-outline-product{
