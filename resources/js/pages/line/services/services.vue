@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 import selectCategory from "./selectCategory.vue";
 import selectService from "./selectService.vue";
 import cartList from "./cartList.vue";
@@ -44,7 +44,7 @@ import cartFloat from "./selectService/component/cartFloat.vue";
 
 export default {
   data: () => ({
-    currentPage: "selectCategory",
+    currentPage: "inputInformation",
   }),
   components: {
     selectCategory,
@@ -65,12 +65,20 @@ export default {
     ...mapActions("service_category", {
       fetchServiceCategory: "index",
     }),
+    ...mapMutations('service_category',{
+SET_MOCK:'SET_MOCK',
+INCREASE_SERVICE_MODEL_MOCK:'INCREASE_SERVICE_MODEL_MOCK'
+    }),
     setCurrentPage(pageName) {
       this.currentPage = pageName;
     },
   },
   async created() {
     await this.fetchServiceCategory();
+
+    // mock
+   await  this.SET_MOCK(1)
+    await this.INCREASE_SERVICE_MODEL_MOCK()
   },
 };
 </script>

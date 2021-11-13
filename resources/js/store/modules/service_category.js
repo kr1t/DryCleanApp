@@ -48,7 +48,8 @@ export const getters = {
     return { services, amount, priceAll };
   },
   information: state => state.information,
-  informationSender: state => state.informationSender
+  informationSender: state => state.informationSender,
+
 };
 
 // mutations
@@ -65,6 +66,15 @@ export const mutations = {
       id: service.id
     });
     state.items.data[activeIndex].services[activeService].model++;
+  },
+  INCREASE_SERVICE_MODEL_MOCK(state, service) {
+    let activeIndex = findIndex(state.items.data, {
+      id: state.idActive
+    });
+
+    state.items.data[activeIndex].services[0].model++;
+    state.items.data[activeIndex].services[1].model++;
+
   },
   DECREASE_SERVICE_MODEL(state, service) {
     let activeIndex = findIndex(state.items.data, {
@@ -92,6 +102,11 @@ export const mutations = {
   },
   ORDER_ID(state, code) {
     state.order_code = code;
+  },
+  SET_MOCK(state,id){
+    state.idActive = 1
+    state.information = {"first_name":"qwe","last_name":"qwe","tel":"091222122341","address":"wdqqw","date":"2021-11-05","time":"03:00"}
+    state.informationSender = {"first_name":"qwe","last_name":"qwe","tel":"091222122341","address":"wdqqw","date":"2021-11-05","time":"03:00"}
   }
 };
 

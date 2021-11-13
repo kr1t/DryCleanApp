@@ -8,6 +8,7 @@
             <div class="col-3 text-left">
               <button class="btn-product "
                 @click="DECREASE_SERVICE_MODEL(service)"
+                :disabled="service.model < 1"
                 v-if="!hideInput">
                 -
               </button>
