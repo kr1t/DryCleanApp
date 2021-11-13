@@ -22,7 +22,8 @@ export const state = {
     // date: "2021-11-11",
     // time: "03:26"
   },
-  informationSender: {}
+  informationSender: {},
+  order_code: ""
 };
 
 // getters
@@ -88,6 +89,9 @@ export const mutations = {
   },
   ADD_INFORMATION_SENDER(state, form) {
     state.informationSender = form;
+  },
+  ORDER_ID(state, code) {
+    state.order_code = code;
   }
 };
 
@@ -103,7 +107,7 @@ export const actions = {
   addInformationSender({ commit }, form) {
     commit("ADD_INFORMATION_SENDER", form);
   },
-  async makeOrder({ state, getters }) {
+  async makeOrder({ state, getters, commit }) {
     const { information, informationSender } = state;
     const { carts } = getters;
     const { data } = await axios.post("/api/orders", {
@@ -111,6 +115,11 @@ export const actions = {
       informationSender,
       carts
     });
-    console.log(data);
+
+    commit("ORDER_ID", data.data.order_code);
+
+    return {
+      order_code: data.data.order_code
+    };
   }
 };
