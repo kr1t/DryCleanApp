@@ -2,6 +2,10 @@
   <div>
     Success
     {{ order_code }}
+
+    <router-link :to="{ name: 'line.orders' }">
+      <button class="btn btn-primary">ออเดอร์ของฉัน</button>
+    </router-link>
   </div>
 </template>
 

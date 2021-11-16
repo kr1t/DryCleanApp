@@ -57,6 +57,16 @@ export default [
         path: "services",
         name: "line.services",
         component: page("line/services/services.vue")
+      },
+      {
+        path: "orders",
+        name: "line.orders",
+        component: page("line/orders/orders.vue")
+      },
+      {
+        path: "orders/:id",
+        name: "line.orders.show",
+        component: page("line/orders/orderDetail.vue")
       }
     ]
   },

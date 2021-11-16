@@ -7,7 +7,7 @@ const template = collName => ({
   },
   tGetters: {
     items: state => state.items.data,
-    show: state => state.show
+    show: state => state.show.item
   },
   tMutations: {
     SET_ITEMS(state, data) {
@@ -19,8 +19,8 @@ const template = collName => ({
     }
   },
   tActions: {
-    async index({ commit }, id) {
-      const { data } = await axios.get(`/api/${collName}`);
+    async index({ commit }, { page = 1, item = 10 }) {
+      const { data } = await axios.get(`/api/${collName}`, { page, item });
       commit("SET_ITEMS", data);
     },
     async show({ commit }, id) {

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-
-use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -14,9 +13,21 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+
+        $showItem = $request->item ? $request->item : 10;
+        $keyword = $request->q ? $request->q : '';
+        $sortBy = $request->sortBy ? $request->sortBy : 'desc';
+
+        $items = Order::where(function ($q) use ($keyword) {
+            $q->where('user_id', 1);
+        })->withCount('services')->orderBy('created_at', $sortBy)->paginate($showItem);
+
+        return [
+            "items" =>
+            $items,
+        ];
     }
 
     /**
@@ -44,35 +55,33 @@ class OrderController extends Controller
         $countOrder = Order::count();
         $dateFmt = Carbon::now()->format('ymd');
 
-        $countZeroPad = str_pad(($countOrder+1), 3, "0", STR_PAD_LEFT);
+        $countZeroPad = str_pad(($countOrder + 1), 3, "0", STR_PAD_LEFT);
         $orderId = "LN{$dateFmt}{$countZeroPad}";
 
-         $order = Order::create([
-             "price_sum"=>  $carts['priceAll'], 
-             "order_code" => $orderId,
-             'user_id' => 1,
-         ]);
+        $order = Order::create([
+            "price_sum" => $carts['priceAll'],
+            "order_code" => $orderId,
+            'user_id' => 1,
+        ]);
 
-         foreach($carts['services'] as $service){
-             $order->services()->create([
+        foreach ($carts['services'] as $service) {
+            $order->services()->create([
                 'service_id' => $service['id'],
                 'price' => $service['price'],
                 'model' => $service['model'],
-             ]);
-         }
+            ]);
+        }
 
         $information['type'] = 1;
-         $order->informations()->create($information);
+        $order->informations()->create($information);
         $informationSender['type'] = 2;
-         $order->informations()->create($informationSender);
-
-         
+        $order->informations()->create($informationSender);
 
         return [
-            'message'=>'success',
-            'data'=>[
-                'order_code' =>  $order->order_code
-            ]
+            'message' => 'success',
+            'data' => [
+                'order_code' => $order->order_code,
+            ],
         ];
     }
 
@@ -84,7 +93,13 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $order->informationRequest;
+        $order->informationSend;
+        $order->logs;
+
+        return [
+            "item" => $order,
+        ];
     }
 
     /**
