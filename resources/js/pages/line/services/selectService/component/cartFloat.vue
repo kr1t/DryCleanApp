@@ -5,7 +5,7 @@
     style="position: fixed; right: 30px; bottom: 30px"
     @click="gotoCartList()"
   >
-    {{ carts.amount }}
+    {{   }}
   </button>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mt-4">
     <h1>ออเดอร์ของฉัน</h1>
     <div class="orderDes">
       <div class="orderCode">Order Code : {{ order.order_code }}</div>
