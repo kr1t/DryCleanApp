@@ -4,8 +4,8 @@
       <h1 class="h1-laundry my-4">เลือกบริการ</h1>
       <div class="row">
         <div class="col-6" v-for="category in categories" :key="category.id">
-          <div class="card bg-primary">
-            <div class="card-body" @click="setActive(category.id)">
+          <div class="card card-cate">
+            <div class="card-body card-body-cate" @click="setActive(category.id)">
               <div class="img-category">
                 <img :src="category.image_url" alt="" />
               </div>

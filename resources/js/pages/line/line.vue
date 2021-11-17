@@ -13,19 +13,21 @@ export default {
 html,body{
   font-family: 'Prompt', sans-serif !important;
 }
-button {
+hr{
+  border: 1px solid #E9EDF5 !important;
+}
+.btn-primary-lan{
   color: #233aa6 !important;
   border: 1px solid #233aa6 !important;
   border-radius: 30px !important;
   padding: 10px 20px !important;
   background-color: #fff !important;
   font-weight: 600;
-
   &:disabled{
     opacity: 0.4;
 
     &:hover{
-      opacity: 0.4;  //this is what you want
+      opacity: 0.4;
     }
   }
 
@@ -51,26 +53,86 @@ button {
     border: 1px solid #233aa6 !important;
   }
 }
-// .btn-primary{
-//   background-color: #233aa6 !important;
-//   border-radius: 30px !important;
-//   padding: 10px 20px !important;
-//   font-weight: 600;
-// }
-// .btn-outline-primary{
-//   color: #233aa6 !important;
-//   border: 1px solid #233aa6 !important;
-//   border-radius: 30px !important;
-//   padding: 10px 20px !important;
-//   font-weight: 600;
-// }
-// .btn-outline-primary:hover{
-//   color: #fff !important;
-//   border: 1px solid #233aa6 !important;
-//   background-color: #233aa6 !important;
-//   border-radius: 30px !important;
-//   padding: 10px 20px !important;
-// }
+
+button {
+
+  &.btn-product{
+    width: 25px !important;
+    height: 25px !important;
+    border: 1px solid rgb(27, 27, 27) !important;
+    color: rgb(27, 27, 27) !important;
+    border-radius: 50% !important;
+    padding: 5px 5px !important;
+    line-height: 0 !important;
+    background-color: #fff;
+  }
+  &.btn-product:hover{
+    color: #fff !important;
+    border: 1px solid #233aa6 !important;
+    background-color: #233aa6 ;
+  }
+  &.btn-product-del{
+    width: 25px !important;
+    height: 25px !important;
+    border: 1px solid #c01813 !important;
+    color: #c01813 !important;
+    border-radius: 50% !important;
+    padding: 5px 5px !important;
+    line-height: 0 !important;
+    background-color: #fff;
+  }
+  &.btn-product-del:hover{
+    color: #fff !important;
+    border: 1px solid #c01813 !important;
+    background-color: #c01813 ;
+  }
+  &.btnBotCenFixed{
+    text-align: center;
+    position: fixed;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+.overflowHidden{
+  overflow:hidden !important;
+}
+
+input[type="file"] {
+    display: none;
+}
+.laundry-file-upload {
+  width: 90%;
+  margin-left: 5%;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 1px solid #233AA6;
+  box-sizing: border-box;
+  box-shadow: 0px 7px 15px rgba(42, 49, 203, 0.1);
+  border-radius: 10px;
+  margin-bottom: 40px;
+  color: #A5AACC;
+}
+.inputLaundry{
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E9EDF5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 10px;
+  &:active{
+    border: 1px solid #233AA6 !important;
+  }
+  &:disabled{
+    background-color: #e9ecef !important;
+  }
+}
+.form-address{
+  font-weight: 500;
+}
+
 .img-category img{
   width: 110px;
   height: 100px;
@@ -88,22 +150,23 @@ button {
   color: #233aa6;
   text-align: center;
 }
-.card{
-  border-radius: 20px !important;
-  background-color: #183980 !important;
+.card-cate{
+  background: radial-gradient(101.52% 131.45% at 10% 44.83%, #1D4186 0.98%, #011365 100%);
+  border-radius: 16px !important;
   border: none;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.card-body{
+.card-body-cate{
   border-radius: 20px !important;
-  background-color: #183980 !important;
+  background: radial-gradient(101.52% 131.45% at 10% 44.83%, #1D4186 0.98%, #011365 100%);
   border: none;
 }
 .title-product{
   text-align: left;
   font-weight: 700;
   font-size: 1.25rem;
+  margin-bottom: 25px;
 }
 .product-name{
   text-align: left;
@@ -129,6 +192,89 @@ button {
   border-radius: 50%;
   background-color: #183980;
   color: #fff;
+}
+.total-price-title{
+  font-weight: 700;
+  font-size: 1.1rem;
+  float: left;
+}
+.total-price{
+  font-weight: 700;
+  font-size: 1.25rem;
+  float: right;
+  color: #183980;
+}
+.total-price-box{
+  height: 35px;
+}
+.form-label{
+  margin-top: 10px;
+}
+.form-address{
+  margin-bottom: 20px;
+}
+.selectSenderType button{
+  background: #FFFFFF;
+  border: 1px solid #E9EDF5;
+  box-sizing: border-box;
+  border-radius: 38px;
+  padding: 10px 20px !important;
+  font-weight: 500;
+  color: #233AA6 ;
+  &.active{
+    background: #FFFFFF !important;
+    border: 1px solid #233AA6 !important;
+    box-sizing: border-box;
+    box-shadow: 0px 7px 15px rgba(165, 170, 204, 0.2);
+    border-radius: 52px;
+  }
+}
+.textSecLaundry{
+  color: #A5AACC !important;
+}
+.pLine{
+  line-height: 25px;
+}
+.imageOrder img{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 20PX;
+}
+.btnBottomRow{
+  margin: 20px 0px;
+}
+.swal2-title{
+ font-size: 1.72em !important;
+}
+.centerBox{
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+.imgSuccess img {
+  border-radius: 50%;
+}
+.orderNumber{
+  font-family: Prompt;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 30px;
+}
+.orderThankyou{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.orderStatusBlueS{
+  font-size: 0.75rem;
+  color: #233AA6;
+}
 
+@media only screen and (max-width: 374px) {
+  .swal2-title{
+    font-size: 1.4em !important;
+  }
 }
 </style>

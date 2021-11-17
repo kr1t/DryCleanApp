@@ -26,9 +26,11 @@
               </button>
             </div>
 
-            <button @click="DEL_SERVICE_MODEL(service)" v-if="showDelete">
-              delete
-            </button>
+            <div class="col-1 text-left">
+              <button  class="btn-product-del" @click="DEL_SERVICE_MODEL(service)" v-if="showDelete">
+                D
+              </button>
+            </div>
         </div>
       </div>
     </div>
