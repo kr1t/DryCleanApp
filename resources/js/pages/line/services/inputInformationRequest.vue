@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <h2>นัดรับ</h2>
+  <div class="container">
+    <h2 class="h1-laundry my-4">นัดรับ</h2>
 
-    <form>
+    <form class="form-address">
       <div class="form-group">
-        <label for="first_name" class="form-label">ชื่อ</label>
+        <p for="first_name" class="form-label">ชื่อ</p>
         <input
+        class="inputLaundry"
           type="text"
           name="first_name"
           required
@@ -13,17 +14,17 @@
         />
       </div>
       <div class="form-group">
-        <label for="last_name" class="form-label">นามสกุล</label>
-        <input type="text" name="last_name" required v-model="form.last_name" />
+        <p for="last_name" class="form-label">นามสกุล</p>
+        <input class="inputLaundry" type="text" name="last_name" required v-model="form.last_name" />
       </div>
       <div class="form-group">
-        <label for="tel" class="form-label">เบอร์โทร</label>
-        <input type="tel" name="tel" required v-model="form.tel" />
+        <p for="tel" class="form-label">เบอร์โทร</p>
+        <input class="inputLaundry" type="tel" name="tel" required v-model="form.tel" />
       </div>
       <div class="form-group">
-        <label for="address" class="form-label">ที่อยู่</label>
+        <p for="address" class="form-label">ที่อยู่</p>
         <textarea
-          class="form-control"
+          class="form-control inputLaundry"
           rows="3"
           required
           v-model="form.address"
@@ -31,28 +32,30 @@
       </div>
 
       <div class="form-group">
-        <label for="date" class="form-label">วันที่</label>
-        <input type="date" name="date" required v-model="form.date" />
+        <p for="date" class="form-label ">วันที่</p>
+        <input class="inputLaundry" type="date" name="date" required v-model="form.date" />
       </div>
 
       <div class="form-group">
-        <label for="time" class="form-label">เวลา</label>
-        <input type="time" name="time" required v-model="form.time" />
+        <p for="time" class="form-label">เวลา</p>
+        <input class="inputLaundry" type="time" name="time" required v-model="form.time" />
       </div>
 
     </form>
 
+    <div class="btnBottomRow">
     <div class="row p-2">
       <div class="col-6">
-        <button @click="$emit('changePage', 'cartList')" class="w-100">
+        <button @click="$emit('changePage', 'cartList')" class="w-100 btn-primary-lan">
           กลับ
         </button>
       </div>
       <div class="col-6">
-        <button @click="add()" class="w-100" :disabled="checkEmpty()">
+        <button @click="add()" class="w-100 btn-primary-lan" :disabled="checkEmpty()">
           ถัดไป
         </button>
       </div>
+    </div>
     </div>
   </div>
 </template>

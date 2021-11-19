@@ -1,8 +1,7 @@
 <template>
   <div class="container">
     <h1 class="h1-laundry my-4">ชำระเงิน</h1>
-    <h2>{{ carts.amount }} ชิ้น</h2>
-    <hr />
+    <h2 class="title-product">{{ carts.amount }} ชิ้น</h2>
     <div class="cartAll">
       <serviceInputComponent
         v-for="(service, index) in carts.services"
@@ -11,27 +10,37 @@
         :showDelete="carts.services.length > 1"
       />
 
-      รวม {{ carts.priceAll }} บาท
+      <p class="my-3 total-price-box">
+        <span class="total-price-title">รวม</span>
+        <span class="total-price">{{ carts.priceAll }} บาท</span>
+      </p>
     </div>
     <hr />
 
-    <div class="uploadServiceImage">
-      อัปโหลดรูปภาพเพื่อยืนยัน ออร์เดอร์
-      <input type="file" />
+    <div class="uploadServiceImage ">
+      <p class="text-center">อัปโหลดรูปภาพเพื่อยืนยัน ออร์เดอร์</p>
+      <label for="file-upload" class="laundry-file-upload">
+        <i class="fa fa-cloud-upload"></i> อัปโหลดสลิป
+      </label>
+      <input id="file-upload" type="file"/>
+
     </div>
 
-    <div class="row p-2">
+    <div class="btnBottomRow">
+      <div class="row p-2">
       <div class="col-6">
-        <button @click="$emit('changePage', 'selectService')" class="w-100">
+        <button @click="$emit('changePage', 'selectService')" class="w-100 btn-primary-lan">
           กลับ
         </button>
       </div>
       <div class="col-6">
-        <button @click="$emit('changePage', 'inputInformation')" class="w-100">
+        <button @click="$emit('changePage', 'inputInformation')" class="w-100 btn-primary-lan">
           ถัดไป
         </button>
       </div>
     </div>
+    </div>
+
   </div>
 </template>
 

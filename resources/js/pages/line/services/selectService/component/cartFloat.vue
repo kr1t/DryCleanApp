@@ -5,7 +5,9 @@
     style="position: fixed; right: 30px; bottom: 30px"
     @click="gotoCartList()"
   >
-    {{   }}
+    <i class="mdi mdi-cart-variant" aria-hidden="true"></i>
+
+    {{ this.carts.amount }}
   </button>
 </template>
 

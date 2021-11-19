@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <h1>ชำระเงิน</h1>
-    <h2>{{ carts.amount }} ชิ้น</h2>
-    <hr />
+  <div class="container">
+    <h1 class="h1-laundry my-4">ชำระเงิน</h1>
+    <h2 class="title-product">{{ carts.amount }} ชิ้น</h2>
     <div class="cartAll">
       <serviceInputComponent
         v-for="(service, index) in carts.services"
@@ -14,22 +13,27 @@
 
     <hr />
     <div class="informationReq">
-      <h6 class="text-secondary">ที่อยู่นัดรับ</h6>
-      {{ information.first_name }} {{ information.last_name }} <br />
-      {{ information.tel }} <br />
-      {{ information.address }}
+      <h6 class="textSecLaundry">ที่อยู่นัดรับ</h6>
+      <p class="pLine">
+        {{ information.first_name }} {{ information.last_name }}
+        <br>
+        {{ information.tel }}
+      </p>
+      <p>{{ information.address }}</p>
     </div>
     <hr />
     <div class="informationSender">
-      <h6 class="text-secondary">ที่อยู่จัดส่ง</h6>
-      {{ informationSender.first_name }} {{ informationSender.last_name }}
-      <br />
-      {{ informationSender.tel }} <br />
-      {{ informationSender.address }}
+      <h6 class="textSecLaundry">ที่อยู่จัดส่ง</h6>
+      <p class="pLine">
+        {{ informationSender.first_name }} {{ informationSender.last_name }}
+        <br>
+        {{ informationSender.tel }}
+      </p>
+      <p>{{ informationSender.address }}</p>
     </div>
     <hr />
     <div class="imageOrder">
-      รูปภาพยืนยัน ออร์เดอร์
+      <p>รูปภาพยืนยัน ออร์เดอร์</p>
       <img src="https://picsum.photos/seed/picsum/536/354" width="100" />
     </div>
     <hr />
@@ -52,17 +56,23 @@
         </div>
       </div>
     </div> -->
-    <div class="subTotal">รวม {{ carts.priceAll }} บาท</div>
-    <div class="row p-2">
+    <p class="my-3 total-price-box">
+        <span class="total-price-title">รวม</span>
+        <span class="total-price">{{ carts.priceAll }} บาท</span>
+      </p>
+    <div class="btnBottomRow">
+      <div class="row p-2">
       <div class="col-6">
-        <button @click="$emit('changePage', 'inputInformation')" class="w-100">
+        <button @click="$emit('changePage', 'inputInformation')" class="w-100 btn-primary-lan">
           กลับ
         </button>
       </div>
       <div class="col-6">
-        <button @click="confirmOrder()" class="w-100">ยืนยันออร์เดอร์</button>
+        <button @click="confirmOrder()" class="w-100 btn-primary-lan">ยืนยันออร์เดอร์</button>
+      </div>
       </div>
     </div>
+
   </div>
 </template>
 
