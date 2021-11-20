@@ -1,14 +1,16 @@
 <template>
-  <button
-    class="btn"
-    :class="carts.amount ? 'btn-primary' : 'btn-secondary'"
-    style="position: fixed; right: 30px; bottom: 30px"
-    @click="gotoCartList()"
-  >
-    <i class="mdi mdi-cart-variant" aria-hidden="true"></i>
+  <div class="cartFloat">
+    <button
+      class="btn"
+      :class="carts.amount ? 'btn-primary' : 'btn-secondary'"
+      @click="gotoCartList()"
+      >
+      <i class="mdi mdi-cart-variant" aria-hidden="true"></i>
 
-    {{ this.carts.amount }}
-  </button>
+      <span class="cartAmountFloat">{{ this.carts.amount }}</span>
+    </button>
+  </div>
+
 </template>
 
 <script>

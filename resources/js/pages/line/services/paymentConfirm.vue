@@ -113,8 +113,8 @@ export default {
           text: "เมื่อทำการยืนยันแล้ว สามารถยกเลิกรายการ หากยังไม่ได้รับการยืนยันรายการจากระบบ",
           showCancelButton: true,
           cancelButtonText: "ยกเลิก",
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
+          confirmButtonColor: "#233AA6",
+          cancelButtonColor: "#F78F1E",
           confirmButtonText: "ยืนยัน",
         })
         .then(async (result) => {

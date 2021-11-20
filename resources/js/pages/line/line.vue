@@ -271,6 +271,31 @@ input[type="file"] {
   font-size: 0.75rem;
   color: #233AA6;
 }
+.cartFloat{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+.cartAmountFloat{
+  position:absolute;
+  font-size: 0.75rem;
+  background-color: #F78F1E;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  top: 0px;
+  padding-top: 3px;
+}
+.cartFloat button{
+  background-color: #233AA6;
+  box-shadow: 0px 7px 15px rgba(42, 49, 203, 0.3);
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.75rem;
+}
+
 
 @media only screen and (max-width: 374px) {
   .swal2-title{
