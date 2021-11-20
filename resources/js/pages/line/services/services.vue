@@ -21,7 +21,7 @@
       @changePage="setCurrentPage"
       v-if="currentPage == 'paymentConfirm'"
     />
-    <serviceSuccess   v-if="currentPage == 'success'"/>
+    <serviceSuccess v-if="currentPage == 'success'" />
 
     <cartFloat
       @changePage="setCurrentPage"
@@ -39,12 +39,12 @@ import inputInformationRequest from "./inputInformationRequest.vue";
 import inputInformationSender from "./inputInformationSender.vue";
 
 import paymentConfirm from "./paymentConfirm.vue";
-import serviceSuccess from './success.vue'
+import serviceSuccess from "./success.vue";
 import cartFloat from "./selectService/component/cartFloat.vue";
 
 export default {
   data: () => ({
-    currentPage: "success",
+    currentPage: "selectCategory",
   }),
   components: {
     selectCategory,
@@ -54,7 +54,7 @@ export default {
     inputInformationSender,
     paymentConfirm,
     cartFloat,
-    serviceSuccess
+    serviceSuccess,
   },
   computed: {
     ...mapGetters("service_category", {
@@ -65,20 +65,20 @@ export default {
     ...mapActions("service_category", {
       fetchServiceCategory: "index",
     }),
-    ...mapMutations('service_category',{
-SET_MOCK:'SET_MOCK',
-INCREASE_SERVICE_MODEL_MOCK:'INCREASE_SERVICE_MODEL_MOCK'
+    ...mapMutations("service_category", {
+      SET_MOCK: "SET_MOCK",
+      INCREASE_SERVICE_MODEL_MOCK: "INCREASE_SERVICE_MODEL_MOCK",
     }),
     setCurrentPage(pageName) {
       this.currentPage = pageName;
     },
   },
   async created() {
-    await this.fetchServiceCategory();
+    await this.fetchServiceCategory({});
 
     // mock
-   await  this.SET_MOCK(1)
-    await this.INCREASE_SERVICE_MODEL_MOCK()
+    await this.SET_MOCK(1);
+    await this.INCREASE_SERVICE_MODEL_MOCK();
   },
 };
 </script>

@@ -1,36 +1,48 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-5 mb-3"><div class="serviceLeft product-name">{{ service.name }}</div></div>
-      <div class="col-3"><span class="price product-price">{{ service.price }} บาท</span></div>
+      <div class="col-5 mb-3">
+        <div class="serviceLeft product-name">{{ service.name }}</div>
+      </div>
+      <div class="col-3">
+        <span class="price product-price">{{ service.price }} บาท</span>
+      </div>
       <div class="col-4">
         <div class="row">
-            <div class="col-3 text-left">
-              <button class="btn-product "
-                @click="DECREASE_SERVICE_MODEL(service)"
-                :disabled="service.model < 1"
-                v-if="!hideInput">
-                -
-              </button>
-            </div>
+          <div class="col-3 text-left">
+            <button
+              class="btn-product"
+              @click="DECREASE_SERVICE_MODEL(service)"
+              :disabled="service.model < 1"
+              v-if="!hideInput"
+            >
+              -
+            </button>
+          </div>
 
-            <div class="col-3 text-left">
-              <span class="amountModel product-amount">{{ service.model }}</span>
-            </div>
+          <div class="col-3 text-left">
+            <span class="amountModel product-amount">{{ service.model }}</span>
+          </div>
 
-            <div class="col-3 text-left">
-              <button class="btn-product"
-                @click="INCREASE_SERVICE_MODEL(service)"
-                v-if="!hideInput">
-                +
-              </button>
-            </div>
+          <div class="col-3 text-left">
+            <button
+              class="btn-product"
+              @click="INCREASE_SERVICE_MODEL(service)"
+              v-if="!hideInput"
+            >
+              +
+            </button>
+          </div>
 
-            <div class="col-1 text-left">
-              <button  class="btn-product-del" @click="DEL_SERVICE_MODEL(service)" v-if="showDelete">
-                D
-              </button>
-            </div>
+          <div class="col-1 text-left">
+            <button
+              class="btn-product-del"
+              @click="DEL_SERVICE_MODEL(service)"
+              v-if="showDelete"
+            >
+              <i class="mdi mdi-delete-outline" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -15,8 +15,12 @@ class CreateOrderLogsTable extends Migration
     {
         Schema::create('order_logs', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('order_id');
             $table->bigInteger('user_id');
-            $table->text('message');
+            $table->integer('type')->comment('1.เตรียมไปรับ 2.รับ 3.เข้าระบบ 4.sp');
+            $table->text('message')->nullable();
+            $table->text('des')->nullable();
+
             $table->timestamps();
         });
     }
