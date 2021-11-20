@@ -77,7 +77,7 @@ button {
     border: 1px solid #c01813 !important;
     color: #c01813 !important;
     border-radius: 50% !important;
-    padding: 5px 5px !important;
+    padding: 5px 3px !important;
     line-height: 0 !important;
     background-color: #fff;
   }
@@ -295,7 +295,37 @@ input[type="file"] {
   border-radius: 50%;
   font-size: 1.75rem;
 }
-
+.gridService {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  margin: 0px -1.5px;
+}
+.gridServiceInput {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  margin: 0px -1.5px;
+}
+.item {
+  box-sizing: border-box;
+  width: 33.33%;
+  margin-bottom: 10px;
+  padding: 0px 1.5px;
+}
+.item2 {
+  box-sizing: border-box;
+  width: 33.33%;
+  margin-bottom: 10px;
+  padding: 0px 1.5px;
+  text-align: center;
+}
 
 @media only screen and (max-width: 374px) {
   .swal2-title{
