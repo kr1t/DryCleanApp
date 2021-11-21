@@ -21,7 +21,7 @@ h1 {
   margin: 40px 0px 30px 0px;
 }
 hr{
-  border: 1px solid #E9EDF5 !important;
+  border: 1px solid #c8d1e6 !important;
 }
 .btn-primary-lan{
   color: #233aa6 !important;
@@ -369,6 +369,7 @@ input {
   justify-content: flex-start;
   align-items: stretch;
   color: #233AA6;
+  margin-bottom: 5px;
 }
 .itemOrderDetail{
   box-sizing: border-box;
@@ -405,6 +406,9 @@ input {
 }
 .orderAll{
   width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 .orderAll button{
   width: 100%;
@@ -470,6 +474,72 @@ input {
 }
 .orderReqDate{
   text-align: right;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin: auto 0;
+  vertical-align: middle;
+}
+.orderReqTextHead{
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.orderReqDateHead{
+  text-align: right;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 5px;
+}
+.orderReqText{
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 10px 0px;
+}
+.UlCustomlist ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 20px;
+}
+.addOnPriceService{
+  color: #F78F1E;
+  font-weight: 500;
+}
+.btnSeeMoreDetailOrder{
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #233AA6;
+  background-color: #fff;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 7px 15px #2a31cb1a);
+  border-radius: 10px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.btnSeeMoreDetailOrder i{
+ position: absolute;
+ right: 10px;
+ color: #233AA6;
+}
+.height80px{
+  width: 100%;
+  height: 60px;
+}
+.button-bar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: block;
+    border: none !important;
+    box-shadow: rgba(14, 30, 37, 0.062) 0px 2px 4px 0px, rgba(14, 30, 37, 0.185) 0px 2px 16px 0px;
 }
 .dotted {border: 1px dotted #233AA6; border-style: none none dotted; color: #fff; background-color: #fff; }
 @media only screen and (max-width: 374px) {

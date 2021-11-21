@@ -44,6 +44,14 @@
     <div class="orderDetail">
       <step1 :order="order" />
     </div>
+    <hr>
+    <div class="addOnPriceService">
+      <p>มีค่าบริการเพิ่มเติม 50 บาท</p>
+    </div>
+    <div class="height80px"></div>
+    <div class="button-bar">
+      <button class="btnSeeMoreDetailOrder">รายละเอียด <i class="mdi mdi-arrow-right" aria-hidden="true"></i></button>
+    </div>
   </div>
 </template>
 
