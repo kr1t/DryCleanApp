@@ -45,33 +45,24 @@ hr{
     border-radius: 30px !important;
     padding: 10px 20px !important;
   }
-
-  &.btn-product{
-    width: 25px !important;
-    height: 25px !important;
-    border: 1px solid rgb(27, 27, 27) !important;
-    color: rgb(27, 27, 27) !important;
-    border-radius: 50% !important;
-    padding: 5px 5px !important;
-    line-height: 0 !important;
-  }
-  &.btn-product:hover{
-    color: #fff !important;
-    border: 1px solid #233aa6 !important;
-  }
 }
-
 button {
-
   &.btn-product{
     width: 25px !important;
     height: 25px !important;
-    border: 1px solid rgb(27, 27, 27) !important;
-    color: rgb(27, 27, 27) !important;
+    border: 1px solid #303030 !important;
+    color: #303030 !important;
     border-radius: 50% !important;
     padding: 5px 5px !important;
     line-height: 0 !important;
     background-color: #fff;
+      &:disabled{
+        opacity: 0.4;
+
+      &:hover{
+        opacity: 0.4;
+      }
+    }
   }
   &.btn-product:hover{
     color: #fff !important;
@@ -99,6 +90,13 @@ button {
     bottom: 15%;
     left: 50%;
     transform: translate(-50%, 0);
+  }
+}
+.btnSecondaryCartList{
+  opacity: 0.4;
+  color: #fff;
+  &:hover{
+    color: #fff;
   }
 }
 .overflowHidden{
@@ -519,6 +517,7 @@ input {
   text-align: left;
   font-weight: 500;
   font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 .btnSeeMoreDetailOrder i{
  position: absolute;

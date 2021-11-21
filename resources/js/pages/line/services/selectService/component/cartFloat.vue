@@ -2,7 +2,7 @@
   <div class="cartFloat">
     <button
       class="btn"
-      :class="carts.amount ? 'btn-primary' : 'btn-secondary'"
+      :class="carts.amount ? 'btn-primary' : 'btnSecondaryCartList'"
       @click="gotoCartList()"
       >
       <i class="mdi mdi-cart-variant" aria-hidden="true"></i>

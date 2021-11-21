@@ -44,7 +44,7 @@ import cartFloat from "./selectService/component/cartFloat.vue";
 
 export default {
   data: () => ({
-    currentPage: "success",
+    currentPage: "cartList",
   }),
   components: {
     selectCategory,
