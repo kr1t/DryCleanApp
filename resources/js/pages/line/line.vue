@@ -101,9 +101,9 @@ button {
 input[type="file"] {
     display: none;
 }
-.laundry-file-upload {
-  width: 90%;
-  margin-left: 5%;
+.laundryFileUpload {
+  width: 95%;
+  margin-left: 2.5%;
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
@@ -115,8 +115,19 @@ input[type="file"] {
   margin-bottom: 40px;
   color: #A5AACC;
 }
+.uploadIcon{
+  font-size: 1.2rem;
+  color: #233AA6;
+}
+.uploadText{
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+input {
+    max-width: 100% !important;
+}
 .inputLaundry{
-  width: 100%;
+  width: 100% !important;
   background: #FFFFFF;
   border: 1px solid #E9EDF5;
   box-sizing: border-box;
@@ -128,6 +139,18 @@ input[type="file"] {
   &:disabled{
     background-color: #e9ecef !important;
   }
+}
+.swal2-styled.swal2-confirm,
+.swal2-styled.swal2-cancel{
+  border-radius: 45px;
+  padding: 10px 30px;
+}
+.swal2-popup {
+  border-radius: 10px;
+}
+.alertConfirm{
+  border-radius: 10px;
+
 }
 .form-address{
   font-weight: 500;
@@ -149,6 +172,7 @@ input[type="file"] {
   font-weight: 800;
   color: #233aa6;
   text-align: center;
+  margin: 40px 0px 30px 0px;
 }
 .card-cate{
   background: radial-gradient(101.52% 131.45% at 10% 44.83%, #1D4186 0.98%, #011365 100%);
@@ -208,7 +232,8 @@ input[type="file"] {
   height: 35px;
 }
 .form-label{
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 2px;
 }
 .form-address{
   margin-bottom: 20px;

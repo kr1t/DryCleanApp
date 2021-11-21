@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="h1-laundry my-4">นัดรับ</h2>
+    <h2 class="h1-laundry">นัดรับ</h2>
 
     <form class="form-address">
       <div class="form-group">

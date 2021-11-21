@@ -9,16 +9,40 @@
       </div>
       <div class="item">
         <div class="gridServiceInput">
-          <div class="item2">
+
+          <!-- Delete Mode -->
+          <div class="item2"  v-if="showDelete">
             <button
-              class="btn-product"
+              :class="{'btn-product': true}"
+              @click="DECREASE_SERVICE_MODEL(service)"
+              :disabled="service.model < 1"
+              v-if="service.model > 1"
+            >
+              -
+            </button>
+            <button
+              class="btn-product-del"
+              @click="DEL_SERVICE_MODEL(service)"
+              v-else
+            >
+              <i class="mdi mdi-delete-outline" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Normal Mode -->
+          <div class="item2" v-else>
+            <button
+              :class="{'btn-product': true}"
               @click="DECREASE_SERVICE_MODEL(service)"
               :disabled="service.model < 1"
               v-if="!hideInput"
             >
               -
             </button>
+
           </div>
+
+
 
           <div class="item2">
             <span class="amountModel product-amount">{{ service.model }}</span>
@@ -34,7 +58,7 @@
             </button>
           </div>
 
-          <div class="item2">
+          <!-- <div class="item2">
             <button
               class="btn-product-del"
               @click="DEL_SERVICE_MODEL(service)"
@@ -42,7 +66,7 @@
             >
               <i class="mdi mdi-delete-outline" aria-hidden="true"></i>
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

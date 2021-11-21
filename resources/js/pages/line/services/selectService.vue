@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="h1-laundry my-4">เลือกบริการ</h1>
+    <h1 class="h1-laundry">เลือกบริการ</h1>
     <selectServiceByGender :services="services" :categoryName="activeName" />
     <div class="btnBottomRow">
     <div class="row p-2">

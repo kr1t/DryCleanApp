@@ -44,7 +44,7 @@ import cartFloat from "./selectService/component/cartFloat.vue";
 
 export default {
   data: () => ({
-    currentPage: "selectCategory",
+    currentPage: "paymentConfirm",
   }),
   components: {
     selectCategory,

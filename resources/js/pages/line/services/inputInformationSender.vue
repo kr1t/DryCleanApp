@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="h1-laundry my-4">จัดส่ง</h2>
+    <h2 class="h1-laundry">จัดส่ง</h2>
     <div class="selectSenderType">
       <div class="row">
         <div class="col-6">

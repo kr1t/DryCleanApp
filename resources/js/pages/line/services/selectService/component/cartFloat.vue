@@ -7,7 +7,7 @@
       >
       <i class="mdi mdi-cart-variant" aria-hidden="true"></i>
 
-      <span class="cartAmountFloat">{{ this.carts.amount }}</span>
+      <span class="cartAmountFloat" v-if="carts.amount > 0">{{ this.carts.amount }}</span>
     </button>
   </div>
 
