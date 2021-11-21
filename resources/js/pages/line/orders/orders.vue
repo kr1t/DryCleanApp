@@ -1,6 +1,6 @@
 <template>
-  <div>
-    Orders
+  <div class="container">
+    <h1 class="h1-laundry">ออเดอร์ของฉัน</h1>
     <OrderList />
   </div>
 </template>

@@ -3,8 +3,8 @@
     <ul>
       <li>
         <div class="row">
-          <div class="orderReqText col-6">นัดรับ</div>
-          <div class="orderReqDate col-6">
+          <div class="orderReqText col-4">นัดรับ</div>
+          <div class="orderReqDate col-8">
             {{ order.information_request.date }}
             {{ order.information_request.time }}
           </div>
@@ -13,8 +13,8 @@
         <ul>
           <li>
             <div class="row">
-              <div class="orderReqText col-6">นัดรับ</div>
-              <div class="orderReqDate col-6">
+              <div class="orderReqText col-4">นัดรับ</div>
+              <div class="orderReqDate col-8">
                 {{ order.information_request.date }}
                 {{ order.information_request.time }}
               </div>

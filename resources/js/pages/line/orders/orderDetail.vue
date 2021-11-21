@@ -2,26 +2,40 @@
   <div class="container mt-4">
     <h1>ออเดอร์ของฉัน</h1>
     <div class="orderDes">
-      <div class="orderCode">Order Code : {{ order.order_code }}</div>
-      <div class="orderStatus">Waiting</div>
+      <div class="itemOrderDetail8">
+        <div class="orderCode">Order Code : {{ order.order_code }} </div>
+      </div>
+      <div class="itemOrderDetail4">
+        <div class="orderStatus">
+          <span class="badge bgWaiting">Waiting</span>
+        </div>
+      </div>
     </div>
 
     <div class="orderStepper my-4">
       <div class="step1">
-        <div class="stepBtn" :class="{ active: activeStep(1) }"></div>
-        <div class="stepName">1</div>
+        <div class="step stepBox">
+          <div class="stepBtn" :class="{ active: activeStep(1) }"></div>
+        </div>
+        <div class="stepName">นัดรับ</div>
       </div>
       <div class="step2">
-        <div class="stepBtn" :class="{ active: activeStep(2) }"></div>
-        <div class="stepName">2</div>
+        <div class="step stepBox">
+          <div class="stepBtn" :class="{ active: activeStep(2) }"></div>
+        </div>
+        <div class="stepName">ดำเนินการ</div>
       </div>
       <div class="step3">
-        <div class="stepBtn" :class="{ active: activeStep(3) }"></div>
-        <div class="stepName">3</div>
+        <div class="step stepBox">
+          <div class="stepBtn" :class="{ active: activeStep(3) }"></div>
+        </div>
+        <div class="stepName">เสร็จสิ้น</div>
       </div>
       <div class="step4">
-        <div class="stepBtn" :class="{ active: activeStep(4) }"></div>
-        <div class="stepName">4</div>
+        <div class="step stepBox">
+          <div class="stepBtn" :class="{ active: activeStep(4) }"></div>
+        </div>
+        <div class="stepName">นำส่ง</div>
       </div>
     </div>
 

@@ -12,6 +12,13 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 html,body{
   font-family: 'Prompt', sans-serif !important;
+  text-decoration: none !important;
+}
+h1 {
+  font-weight: 800;
+  color: #233aa6;
+  text-align: center;
+  margin: 40px 0px 30px 0px;
 }
 hr{
   border: 1px solid #E9EDF5 !important;
@@ -351,10 +358,127 @@ input {
   padding: 0px 1.5px;
   text-align: center;
 }
-
+.cardOrder{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  border: 1px solid #A5AACC;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  color: #233AA6;
+}
+.itemOrderDetail{
+  box-sizing: border-box;
+  width: 50%;
+  display: flex;
+  padding: 10px;
+}
+.itemOrderDetail8{
+  box-sizing: border-box;
+  width: 70%;
+  display: flex;
+  margin-top: 1px;
+}
+.itemOrderDetail4{
+  box-sizing: border-box;
+  width: 30%;
+  display: flex;
+}
+.orderAmount,.orderTime{
+  margin-top: -20px;
+  font-size: 0.9rem;
+}
+.orderStatus,.orderTime{
+  width: 100%;
+  text-align: right;
+}
+.orderCode{
+  font-weight: 700;
+  font-size: 1rem;
+}
+.orderStatus{
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.orderAll{
+  width: 100%;
+}
+.orderAll button{
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  background-color: transparent;
+  color: #183980;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-top: 1px solid #A5AACC;
+  padding-top: 5px;
+}
+.bgWaiting{
+  background-color: #F78F1E;
+  border-radius: 20px;
+  padding: 5px 9px;
+}
+.bgConfirm{
+  background-color: #233AA6;
+  border-radius: 20px;
+  padding: 5px 9px;
+}
+.bgDelivering{
+  background-color: #0b8aa0;
+  border-radius: 20px;
+  padding: 5px 9px;
+}
+.bgSuccess{
+  background-color: #46a00b;
+  border-radius: 20px;
+  padding: 5px 9px;
+}
+.orderDes{
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  flex-wrap: wrap;
+}
+.stepName{
+  text-align: center;
+  color: #233AA6;
+  margin-top: 3px;
+  font-weight: 500;
+}
+.orderStepper{
+  vertical-align: middle;
+  display: flex;
+  flex-wrap: wrap;
+}
+.stepBtn{
+  text-align: center;
+  margin: 0 auto;
+}
+.stepBox{
+  box-sizing: border-box;
+  width: 25%;
+  display: flex;
+}
+.step{
+  width: 100%;
+}
+.orderReqDate{
+  text-align: right;
+}
+.dotted {border: 1px dotted #233AA6; border-style: none none dotted; color: #fff; background-color: #fff; }
 @media only screen and (max-width: 374px) {
   .swal2-title{
     font-size: 1.4em !important;
   }
+  .orderAmount, .orderTime {
+    margin-top: -20px;
+    font-size: 0.82rem;
+}
 }
 </style>
