@@ -1,30 +1,54 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col-5 mb-3">
+    <div class="gridService">
+      <div class="item">
         <div class="serviceLeft product-name">{{ service.name }}</div>
       </div>
-      <div class="col-3">
+      <div class="item text-center">
         <span class="price product-price">{{ service.price }} บาท</span>
       </div>
-      <div class="col-4">
-        <div class="row">
-          <div class="col-3 text-left">
+      <div class="item">
+        <div class="gridServiceInput">
+
+          <!-- Delete Mode -->
+          <div class="item2"  v-if="showDelete">
             <button
-              class="btn-product"
+              :class="{'btn-product': true}"
+              @click="DECREASE_SERVICE_MODEL(service)"
+              :disabled="service.model < 1"
+              v-if="service.model > 1"
+            >
+              -
+            </button>
+            <button
+              class="btn-product-del"
+              @click="DEL_SERVICE_MODEL(service)"
+              v-else
+            >
+              <i class="mdi mdi-delete-outline" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Normal Mode -->
+          <div class="item2" v-else>
+            <button
+              :class="{'btn-product': true}"
               @click="DECREASE_SERVICE_MODEL(service)"
               :disabled="service.model < 1"
               v-if="!hideInput"
             >
               -
             </button>
+
           </div>
 
-          <div class="col-3 text-left">
+
+
+          <div class="item2">
             <span class="amountModel product-amount">{{ service.model }}</span>
           </div>
 
-          <div class="col-3 text-left">
+          <div class="item2">
             <button
               class="btn-product"
               @click="INCREASE_SERVICE_MODEL(service)"
@@ -34,7 +58,7 @@
             </button>
           </div>
 
-          <div class="col-1 text-left">
+          <!-- <div class="item2">
             <button
               class="btn-product-del"
               @click="DEL_SERVICE_MODEL(service)"
@@ -42,7 +66,7 @@
             >
               <i class="mdi mdi-delete-outline" aria-hidden="true"></i>
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

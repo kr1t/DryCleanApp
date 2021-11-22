@@ -2,26 +2,40 @@
   <div class="container mt-4">
     <h1>ออเดอร์ของฉัน</h1>
     <div class="orderDes">
-      <div class="orderCode">Order Code : {{ order.order_code }}</div>
-      <div class="orderStatus">Waiting</div>
+      <div class="itemOrderDetail8">
+        <div class="orderCode">Order Code : {{ order.order_code }} </div>
+      </div>
+      <div class="itemOrderDetail4">
+        <div class="orderStatus">
+          <span class="badge bgWaiting">Waiting</span>
+        </div>
+      </div>
     </div>
 
     <div class="orderStepper my-4">
       <div class="step1">
-        <div class="stepBtn" :class="{ active: activeStep(1) }"></div>
-        <div class="stepName">1</div>
+        <div class="step stepBox">
+          <div class="stepBtn" :class="{ active: activeStep(1) }"></div>
+        </div>
+        <div class="stepName">นัดรับ</div>
       </div>
       <div class="step2">
-        <div class="stepBtn" :class="{ active: activeStep(2) }"></div>
-        <div class="stepName">2</div>
+        <div class="step stepBox">
+          <div class="stepBtn" :class="{ active: activeStep(2) }"></div>
+        </div>
+        <div class="stepName">ดำเนินการ</div>
       </div>
       <div class="step3">
-        <div class="stepBtn" :class="{ active: activeStep(3) }"></div>
-        <div class="stepName">3</div>
+        <div class="step stepBox">
+          <div class="stepBtn" :class="{ active: activeStep(3) }"></div>
+        </div>
+        <div class="stepName">เสร็จสิ้น</div>
       </div>
       <div class="step4">
-        <div class="stepBtn" :class="{ active: activeStep(4) }"></div>
-        <div class="stepName">4</div>
+        <div class="step stepBox">
+          <div class="stepBtn" :class="{ active: activeStep(4) }"></div>
+        </div>
+        <div class="stepName">นำส่ง</div>
       </div>
     </div>
 
@@ -29,6 +43,14 @@
 
     <div class="orderDetail">
       <step1 :order="order" />
+    </div>
+    <hr>
+    <div class="addOnPriceService">
+      <p>มีค่าบริการเพิ่มเติม 50 บาท</p>
+    </div>
+    <div class="height80px"></div>
+    <div class="button-bar">
+      <button class="btnSeeMoreDetailOrder">รายละเอียด <i class="mdi mdi-arrow-right" aria-hidden="true"></i></button>
     </div>
   </div>
 </template>

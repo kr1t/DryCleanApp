@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="h1-laundry my-4">จัดส่ง</h2>
+    <h2 class="h1-laundry">จัดส่ง</h2>
     <div class="selectSenderType">
       <div class="row">
         <div class="col-6">
@@ -62,12 +62,12 @@
 
       <div class="form-group">
         <p for="date" class="form-label">วันที่</p>
-        <input class="inputLaundry" type="date" name="date" required v-model="form.date" />
+        <input class="inputLaundry form-inline" type="date" name="date" required v-model="form.date" />
       </div>
 
       <div class="form-group">
         <p for="time" class="form-label">เวลา</p>
-        <input class="inputLaundry" type="time" name="time" required v-model="form.time" />
+        <input class="inputLaundry form-inline" type="time" name="time" required v-model="form.time" />
       </div>
     </form>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="h1-laundry my-4">ชำระเงิน</h1>
+    <h1 class="h1-laundry">ชำระเงิน</h1>
     <h2 class="title-product">{{ carts.amount }} ชิ้น</h2>
     <div class="cartAll">
       <serviceInputComponent
@@ -113,9 +113,10 @@ export default {
           text: "เมื่อทำการยืนยันแล้ว สามารถยกเลิกรายการ หากยังไม่ได้รับการยืนยันรายการจากระบบ",
           showCancelButton: true,
           cancelButtonText: "ยกเลิก",
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
+          confirmButtonColor: "#233AA6",
+          cancelButtonColor: "#F78F1E",
           confirmButtonText: "ยืนยัน",
+          class:"alertConfirm",
         })
         .then(async (result) => {
           if (result.isConfirmed) {

@@ -12,7 +12,9 @@
         <p class="orderStatusBlueS">รอการยืนยันการชำระเงิน</p>
       </div>
     </div>
-    <button class="btnBotCenFixed btn-primary-lan">ออเดอร์ของฉัน</button>
+    <router-link :to="{name:'line.orders'}">
+          <button class="btnBotCenFixed btn-primary-lan">ออเดอร์ของฉัน</button>
+    </router-link>
   </div>
 </template>
 
